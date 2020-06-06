@@ -40,18 +40,7 @@
         <button onclick="logout()">Logout</button>
             
         <script>
-        var provider = new firebase.auth.TwitterAuthProvider();
-        firebase.auth().signInWithPopup(provider).catch(function(error) {
-          console.log("Error authenticating user:", error);
-        });
-        }
-
-        firebase.auth().onAuthStateChanged(function(user) {
-        // Once authenticated, instantiate Firechat with the logged in user
-        if (user) {
-          initChat(user);
-        }
-        });
+        initChat(user);
 
         function initChat(user) {
         // Get a Firebase Database ref
