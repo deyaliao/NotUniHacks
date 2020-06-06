@@ -1,8 +1,8 @@
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      document.getElementById("user_div").style.display = "block";
-      document.getElementById("login_div").style.display = "none";
+      document.getElementById("user_page").style.display = "block";
+      document.getElementById("login_page").style.display = "none";
 
       var user = firebase.auth().currentUser;
       if(user != null){
@@ -11,8 +11,8 @@ firebase.auth().onAuthStateChanged(function(user) {
       }
     } else {
       // No user is signed in.
-      document.getElementById("user_div").style.display = "none";
-      document.getElementById("login_div").style.display = "block";
+      document.getElementById("user_page").style.display = "none";
+      document.getElementById("login_page").style.display = "block";
     }
   });
 
