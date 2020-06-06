@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="login.css">
     </head>
     <body>
-        <section class="box-container">
+        <section class="box-container" id="login_page">
             <div class="box1">
                 <p id="first">WELCOME <br> BACK!</p>
                 <p>new here? <a href="">Create Account</a></p>
@@ -14,14 +14,13 @@
             <div class="box2">
                 <h2 id="sign-in">SIGN IN</h2>
                 <div>
-                    <input type="email" placeholder="email" class="rounded">
-                    <input type="password" placeholder="password" class="rounded" id="password">
+                    <input type="email" placeholder="email" class="rounded" id="email_field"/>
+                    <input type="password" placeholder="password" class="rounded" id="password_field"/>
                 </div>
 
                     <a href="" id=forgotPass>forgot password?</a>
                     <br><br>
-                    <input type="submit" class="rounded" id="continueButton">
-
+                    <button onclick="login()" class="rounded" >Submit</button>
                 
                 <br><br><br>
                 <div class="button-container">
@@ -31,6 +30,33 @@
 
             </div>
             <div class="clear"></div>
-        </section>
+            </section>
+        
+        <div id="user_page" class="loggedin-div">
+        <h3>Welcome User</h3>
+        <p id="user_para">Welcome to Frebase web login. You're currently logged in.</p>
+        <button onclick="logout()">Logout</button>
+        </div>
+        
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+    <script src = "https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCDkBQ8Y_DhLDGORTEMdVqcjbMkuRlnveo",
+        authDomain: "proconnect-b0fea.firebaseapp.com",
+        databaseURL: "https://proconnect-b0fea.firebaseio.com",
+        projectId: "proconnect-b0fea",
+        storageBucket: "proconnect-b0fea.appspot.com",
+        messagingSenderId: "371633473396",
+        appId: "1:371633473396:web:73b93a8ff724c9faa10e21",
+        measurementId: "G-FL97FXCZ2B"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src = "index.js"></script>
     </body>
 </html>
