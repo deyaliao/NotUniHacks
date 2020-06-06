@@ -32,11 +32,35 @@
             <div class="clear"></div>
             </section>
         
+        
+        
         <div id="user_page" class="loggedin-div">
         <h3>Welcome User</h3>
         <p id="user_para">Welcome to Frebase web login. You're currently logged in.</p>
         <button onclick="logout()">Logout</button>
+            
+        <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+        // Once authenticated, instantiate Firechat with the logged in user
+        if (user) {
+          initChat(user);
+        }
+        });
+
+        function initChat(user) {
+        // Get a Firebase Database ref
+        var chatRef = firebase.database().ref("chat");
+
+        // Create a Firechat instance
+        var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+
+        // Set the Firechat user
+        chat.setUser(user.uid, user.displayName);
+        }
+        </script>
         </div>
+        
+        
         
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
