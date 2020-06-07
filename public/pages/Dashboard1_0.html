@@ -3825,8 +3825,12 @@ window.application = new Application();
 		<span>Stats</span>
 	</div>
 	<div id="Hello_Jocelyn">
-		<span>Hello, Bob</span>
 	</div>
+	<script>
+		// Check browser support
+		document.getElementById("Hello_Jocelyn").innerHTML = "Hello " + sessionStorage.getItem("username")
+
+		</script>
 	<a href="courses.html">
 		<div id="Courses">
 			<span>Courses</span>
