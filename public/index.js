@@ -2,8 +2,10 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       
       // User is signed in.
-      document.getElementById("user_page").style.display = "block";
-      document.getElementById("login_page").style.display = "none";
+//       document.getElementById("user_page").style.display = "block";
+//       document.getElementById("login_page").style.display = "none";
+        
+      <a href = "Onboard_1.html"> </a>
 
       var user = firebase.auth().currentUser;
       if(user != null){
