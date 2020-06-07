@@ -9,6 +9,9 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
   // The signed-in user info.
   var user = result.user;
   // ...
+  sessionStorage.setItem("username", "Deya");
+  window.location='pages/dashboard1_0.html';
+
 }).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;

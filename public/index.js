@@ -7,8 +7,9 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       var user = firebase.auth().currentUser;
       if(user != null){
-          var email_id = user.email;
-          document.getElementById("user_para").innerHTML = "Welcome User: " + email_id;
+        sessionStorage.setItem("username", "Bob");
+        window.location='pages/dashboard1_0.html';
+
       }
           
          initChat(user);
@@ -46,6 +47,12 @@ function login(){
         
         window.alert("Error: " + errorMessage);
       });
+
+      // <script type="text/javascript">
+      //     document.getElementById("test").onclick = function(){
+      //         window.location.href='/Users/deyaliao/hack1/public/pages/dashboard1_0.html'
+      //             }
+      //   </script>
   }
 
 
